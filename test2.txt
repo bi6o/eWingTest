@@ -1,0 +1,11 @@
+<main><var name='TestRunName'> </var><br></br>
+<loop name='Loop1'>
+  Round and round goes the loop. Iteration no. <var name='IterationNo'> </var><br></br>.
+  <var name='RandomText'> </var>
+  
+  <loop name='Loop2'>
+    Random text from this scope: <var name='RandomText'> </var>
+    Randon text from scope above: <var name='../RandomText'> </var><br></br>
+  </loop>
+</loop>
+</main>

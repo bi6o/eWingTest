@@ -1,0 +1,10 @@
+<var name=“TestRunName”>
+<loop name=“Loop1”>
+  Round and round goes the loop. Iteration no. <var name=“IterationNo”>.
+  <var name=“RandomText”>
+  
+  <loop name=“Loop2”>
+    Random text from this scope: <var name=“RandomText”>
+    Randon text from scope above: <var name=“../RandomText”>
+  </loop>
+</loop>
