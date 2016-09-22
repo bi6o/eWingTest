@@ -6,25 +6,25 @@ include ('variables.php');
 $eWingTest = new TestObject('template.xml');
 
 
-////Task1
-//echo 'Task1: ';
-//foreach ($Control['Loop1'] as $loop) {
-//    $eWingTest->insertValueOfVar("<var name='IterationNo'>", '</var>', $loop['IterationNo']);
-//    $eWingTest->insertValueOfVar("<var name='RandomText'>", '</var>', $loop['RandomText']);
-//    print_r($eWingTest->xmlFile);
-//}
-//
-//echo '---------------------------------------------<br/>';
-//
-////Task2
-//echo 'TaskExtra 1: ';
-//foreach ($Control as $loops) {
-//    foreach ($loops as $loop) {
-//        $eWingTest->insertValueOfVar("<var name='IterationNo'>", '</var>', $loop['IterationNo']);
-//        $eWingTest->insertValueOfVar("<var name='RandomText'>", '</var>', $loop['RandomText']);
-//        print_r($eWingTest->xmlFile);
-//    }
-//}
+//Task1
+echo 'Task1: ';
+foreach ($Control['Loop1'] as $loop) {
+    $eWingTest->insertValueOfVar("<var name='IterationNo'>", '</var>', $loop['IterationNo']);
+    $eWingTest->insertValueOfVar("<var name='RandomText'>", '</var>', $loop['RandomText']);
+    print_r($eWingTest->xmlFile);
+}
+
+echo '---------------------------------------------<br/>';
+
+//Task2
+echo 'TaskExtra 1: ';
+foreach ($Control as $loops) {
+    foreach ($loops as $loop) {
+        $eWingTest->insertValueOfVar("<var name='IterationNo'>", '</var>', $loop['IterationNo']);
+        $eWingTest->insertValueOfVar("<var name='RandomText'>", '</var>', $loop['RandomText']);
+        print_r($eWingTest->xmlFile);
+    }
+}
 
 echo '---------------------------------------------<br/>';
 
@@ -41,9 +41,4 @@ foreach ($Control as $loops) {
             print_r($eWingTest2->xmlFile);
         }
     }
-//    foreach ($loops as $loop) {
-//        $eWingTest->insertValueOfVar("<var name='IterationNo'>", '</var>', $loop['IterationNo']);
-//        $eWingTest->insertValueOfVar("<var name='RandomText'>", '</var>', $loop['RandomText']);
-//        print_r($eWingTest->xmlFile);
-//    }
 }

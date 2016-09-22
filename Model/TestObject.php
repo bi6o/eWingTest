@@ -9,7 +9,6 @@ class TestObject {
         $this->readXmlFile($file);
         $this->fixXmlFile();
         $this->addEndingTag();
-        file_put_contents('test2.txt', $this->xmlFile);
     }
 
     public function addStartingTag() {
@@ -29,7 +28,7 @@ class TestObject {
         $this->xmlFile = str_replace("<var name=“RandomText”>", "<var name=“RandomText”> </var>", $this->xmlFile);
         $this->xmlFile = str_replace("<var name=“../RandomText”>", "<var name=“../RandomText”> </var><br></br>", $this->xmlFile);
         $this->xmlFile = str_replace(["“", "”"], "'", $this->xmlFile);
-        file_put_contents('result3.txt', $this->xmlFile);
+
         return $this;
     }
 
