@@ -34,13 +34,6 @@ echo '---------------------------------------------<br/>';
 echo 'TaskExtra 2:';
 $eWingTest2 = new TestObject('template2.xml');
 foreach ($Control as $loops) {
-    for ($i = 0; $i < count($loops); $i++) {
-        if (is_array($loops[$i])) {
-            $eWingTest2->insertValueOfVar("<var name='IterationNo'>", '</var>', $loops[$i]['IterationNo']);
-            $eWingTest2->insertValueOfVar("<var name='RandomText'>", '</var>', $loops[$i]['RandomText']);
-            $eWingTest2->insertValueOfVar("Random text from this scope: <var name='RandomText'>", '</var>', $loops[$i]['RandomText']);
-            $eWingTest2->insertValueOfVar("<var name='../RandomText'>", '</var>', $loops[$i - 1]['RandomText']);
-            print_r($eWingTest2->xmlFile);
-        }
-    }
+    $eWingTest2->fillTemplateFromArray($loops);
 }
+print_r($eWingTest2->nestedText);
