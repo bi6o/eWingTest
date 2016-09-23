@@ -1,0 +1,6 @@
+<main><var name='TestRunName'> </var><br></br>
+<loop name='Loop1'>
+  Round and round goes the loop. Iteration no. <var name='IterationNo'>2</var><br></br>.
+  <var name='RandomText'>a5771bce93e200c36f7cd9dfd0e5deaa</var>
+</loop>
+</main>

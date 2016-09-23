@@ -9,8 +9,9 @@ $eWingTest = new TestObject('template.xml');
 
 
 //Task1
-echo 'Task1: ';
+
 foreach ($Control['Loop1'] as $loop) {
+file_put_contents('result.txt' , $eWingTest->xmlFile);
     $eWingTest->insertValueOfVar("<var name='IterationNo'>", '</var>', $loop['IterationNo']);
     $eWingTest->insertValueOfVar("<var name='RandomText'>", '</var>', $loop['RandomText']);
     print_r($eWingTest->xmlFile);
@@ -21,10 +22,13 @@ echo '---------------------------------------------<br/>';
 //Task2
 echo 'TaskExtra 1: ';
 foreach ($Control as $loops) {
-    foreach ($loops as $loop) {
-        $eWingTest->insertValueOfVar("<var name='IterationNo'>", '</var>', $loop['IterationNo']);
-        $eWingTest->insertValueOfVar("<var name='RandomText'>", '</var>', $loop['RandomText']);
-        print_r($eWingTest->xmlFile);
+    if (is_array($loops))
+    {
+        foreach ($loops as $loop) {
+            $eWingTest->insertValueOfVar("<var name='IterationNo'>", '</var>', $loop['IterationNo']);
+            $eWingTest->insertValueOfVar("<var name='RandomText'>", '</var>', $loop['RandomText']);
+            print_r($eWingTest->xmlFile);
+        }
     }
 }
 

@@ -4,7 +4,8 @@
   <var name=“RandomText”>
   
   <loop name=“Loop2”>
-    Random text from this scope: <var name=“RandomText”>
+      <var name=“RandomText”>
+        Random text from this scope:
     Randon text from scope above: <var name=“../RandomText”>
   </loop>
 </loop>
