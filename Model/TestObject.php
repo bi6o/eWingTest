@@ -24,7 +24,9 @@ class TestObject {
     }
 
     public function fixXmlFile() {
-        //A better way is to use regex to add closing tags to each var
+        //A better way is to use regex to add closing tags to each var (more generic)
+        //this way the files will be fixed and ready to be parsed by an xml parser, but this is not
+        //the method used in this solution
         $this->xmlFile = str_replace("<var name=“TestRunName”>", "<var name=“TestRunName”> </var><br></br>", $this->xmlFile);
         $this->xmlFile = str_replace("<var name=“IterationNo”>", "<var name=“IterationNo”> </var><br></br>", $this->xmlFile);
         $this->xmlFile = str_replace("<var name=“RandomText”>", "<var name=“RandomText”> </var>", $this->xmlFile);
@@ -39,6 +41,8 @@ class TestObject {
     }
 
     public function insertValueOfVar($needle_start, $needle_end, $replacement) {
+        //Another and a better way to refactor this function is to have it look for the name
+        //of the <var> tag and match it with the corresponding value from the Control variable
         $pos = strpos($this->xmlFile, $needle_start);
         $start = $pos === false ? 0 : $pos + strlen($needle_start);
         $pos = strpos($this->xmlFile, $needle_end, $start);

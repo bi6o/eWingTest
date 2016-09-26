@@ -52,7 +52,12 @@ class TestObjectService {
     }
 
     public function renderSecondExtraTask() {
-               foreach ($this->control as $loops) {
+        //a real solution to the nested loops problem would be a function
+        //that looks for the starting tag of a loop, and retrieves its text. The text is
+        //sent back to the same function in a recursive manner, when no more starting tags exist,
+        //it goes back filling the values of each string with appropriate values from the Controll
+        //variable
+        foreach ($this->control as $loops) {
             $this->eWingTest->fillTemplateFromArray($loops);
         }
         print_r($this->eWingTest->nestedText);
