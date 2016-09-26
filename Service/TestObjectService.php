@@ -52,11 +52,10 @@ class TestObjectService {
     }
 
     public function renderSecondExtraTask() {
-        foreach ($this->control as $loops) {
-            $this->eWingTest->nestedLoopsInTemplate($this->eWingTest->xmlFile, $loops);
-            //$this->eWingTest->fillTemplateFromArray($loops);
+               foreach ($this->control as $loops) {
+            $this->eWingTest->fillTemplateFromArray($loops);
         }
-        //print_r($this->eWingTest->nestedText);
+        print_r($this->eWingTest->nestedText);
     }
 
 }
