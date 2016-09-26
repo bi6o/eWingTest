@@ -2,42 +2,11 @@
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-include ('Model/TestObject.php');
-include ('variables.php');
 
-$eWingTest = new TestObject('template.xml');
+require 'Controller/TestObjectController.php';
 
+$renderer = new TestObjectController\TestObjectController();
 
-//Task1
-
-foreach ($Control['Loop1'] as $loop) {
-file_put_contents('result.txt' , $eWingTest->xmlFile);
-    $eWingTest->insertValueOfVar("<var name='IterationNo'>", '</var>', $loop['IterationNo']);
-    $eWingTest->insertValueOfVar("<var name='RandomText'>", '</var>', $loop['RandomText']);
-    print_r($eWingTest->xmlFile);
-}
-
-echo '---------------------------------------------<br/>';
-
-//Task2
-echo 'TaskExtra 1: ';
-foreach ($Control as $loops) {
-    if (is_array($loops))
-    {
-        foreach ($loops as $loop) {
-            $eWingTest->insertValueOfVar("<var name='IterationNo'>", '</var>', $loop['IterationNo']);
-            $eWingTest->insertValueOfVar("<var name='RandomText'>", '</var>', $loop['RandomText']);
-            print_r($eWingTest->xmlFile);
-        }
-    }
-}
-
-echo '---------------------------------------------<br/>';
-
-//Task3
-echo 'TaskExtra 2:';
-$eWingTest2 = new TestObject('template2.xml');
-foreach ($Control as $loops) {
-    $eWingTest2->fillTemplateFromArray($loops);
-}
-print_r($eWingTest2->nestedText);
+$renderer->firstTask();
+$renderer->firstExtraTask();
+$renderer->secondExtraTask();
